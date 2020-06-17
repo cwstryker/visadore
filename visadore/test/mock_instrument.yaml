@@ -1,0 +1,41 @@
+spec: "1.0"
+
+devices:
+  device 1:
+    eom:
+      ASRL INSTR:
+        q: "\r\n"
+        r: "\n"
+    dialogues:
+      - q: "*IDN?"
+        r: "VISADORE,MOCK1A,0001,V1.0"
+    error: ERROR
+    properties:
+      param_a:
+        default: 1.0
+        getter:
+          q: "A?"
+          r: "{:.2f}"
+        setter:
+          q: "A {:.2f}"
+        specs:
+          min: 0
+          max: 1000
+          type: float
+      param_b:
+        default: 1.0
+        getter:
+          q: "B?"
+          r: "{:.2f}"
+        setter:
+          q: "B {:.2f}"
+        specs:
+          min: 0
+          max: 1000
+          type: float
+
+resources:
+  ASRL1::INSTR:
+    device: device 1
+  ASRL2::INSTR:
+    device: device 1
