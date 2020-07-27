@@ -1,4 +1,4 @@
-from visadore import base
+from .. import base
 
 
 class LocalProductFeature(base.FeatureBase):
