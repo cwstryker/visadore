@@ -1,6 +1,6 @@
 from .instrument import instrument_factory
 
-__VERSION__ = "0.1.1"
+__VERSION__ = "1.0"
 
 
 def get(resource_name, resource_manager=None, identity=None, timeout=10):
